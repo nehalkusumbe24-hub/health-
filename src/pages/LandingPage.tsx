@@ -60,6 +60,13 @@ export default function LandingPage() {
 
       <section className="relative py-20 px-4 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-primary/5" />
+        <div className="absolute inset-0 opacity-10">
+          <img 
+            src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_76277660-f988-4023-95df-f7196892899a.jpg" 
+            alt="Ayurvedic herbs background"
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
         
@@ -125,6 +132,13 @@ export default function LandingPage() {
 
       <section className="py-20 px-4 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-accent/30 to-transparent" />
+        <div className="absolute inset-0 opacity-5">
+          <img 
+            src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_c464fbba-548d-4246-92d8-959df7e534bf.jpg" 
+            alt="Yoga meditation background"
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="container max-w-4xl mx-auto text-center relative z-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">How It Works</h2>
           <div className="grid md:grid-cols-3 gap-8 mt-12">
@@ -161,6 +175,13 @@ export default function LandingPage() {
 
       <section className="py-20 px-4 relative">
         <div className="absolute inset-0 pattern-grid opacity-20" />
+        <div className="absolute inset-0 opacity-5">
+          <img 
+            src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_7cf99d63-fce9-4d84-b3c0-af02c60926ca.jpg" 
+            alt="Wellness spa background"
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="container max-w-4xl mx-auto text-center relative z-10">
           <div className="glass-effect rounded-2xl p-12 border border-primary/20">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Health?</h2>

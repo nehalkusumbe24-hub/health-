@@ -83,6 +83,13 @@ export default function ExercisePage() {
     <div className="space-y-6">
       <Card className="relative overflow-hidden glass-effect border-primary/20">
         <div className="absolute inset-0 gradient-bg" />
+        <div className="absolute inset-0 opacity-10">
+          <img 
+            src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_c464fbba-548d-4246-92d8-959df7e534bf.jpg" 
+            alt="Yoga meditation background"
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="absolute inset-0 pattern-dots opacity-20" />
         <CardHeader className="relative z-10">
           <div className="flex items-center gap-3">

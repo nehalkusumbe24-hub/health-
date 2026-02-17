@@ -62,6 +62,13 @@ export default function DietPage() {
     <div className="space-y-6">
       <Card className="relative overflow-hidden glass-effect border-primary/20">
         <div className="absolute inset-0 gradient-bg" />
+        <div className="absolute inset-0 opacity-10">
+          <img 
+            src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_d4f1d9c7-acfa-4504-b7f1-514307bf6c6e.jpg" 
+            alt="Healthy Ayurvedic food background"
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="absolute inset-0 pattern-dots opacity-20" />
         <CardHeader className="relative z-10">
           <div className="flex items-center gap-3">

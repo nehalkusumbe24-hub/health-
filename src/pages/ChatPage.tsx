@@ -91,15 +91,22 @@ export default function ChatPage() {
 
   return (
     <div className="max-w-4xl mx-auto h-[calc(100vh-12rem)]">
-      <Card className="h-full flex flex-col">
-        <CardHeader>
+      <Card className="h-full flex flex-col relative overflow-hidden glass-effect border-primary/20">
+        <div className="absolute inset-0 opacity-5">
+          <img 
+            src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_7cf99d63-fce9-4d84-b3c0-af02c60926ca.jpg" 
+            alt="Wellness spa background"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <CardHeader className="relative z-10">
           <CardTitle className="flex items-center gap-2">
             <Bot className="h-6 w-6 text-primary" />
             AI Ayurvedic Assistant
           </CardTitle>
         </CardHeader>
 
-        <CardContent className="flex-1 flex flex-col p-0">
+        <CardContent className="flex-1 flex flex-col p-0 relative z-10">
           <ScrollArea className="flex-1 px-4" ref={scrollRef}>
             <div className="space-y-4 py-4">
               {messages.length === 0 && (
@@ -150,7 +157,7 @@ export default function ChatPage() {
             </div>
           </ScrollArea>
 
-          <div className="border-t p-4">
+          <div className="border-t p-4 glass-effect relative z-10">
             <form
               onSubmit={(e) => {
                 e.preventDefault();

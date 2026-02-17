@@ -87,6 +87,13 @@ export default function DashboardPage() {
     <div className="space-y-6">
       <div className="relative rounded-lg p-6 md:p-8 overflow-hidden">
         <div className="absolute inset-0 gradient-bg" />
+        <div className="absolute inset-0 opacity-10">
+          <img 
+            src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_76277660-f988-4023-95df-f7196892899a.jpg" 
+            alt="Ayurvedic herbs background"
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="absolute inset-0 pattern-dots opacity-20" />
         <div className="flex items-start gap-4 relative z-10">
           <div className="h-16 w-16 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 shadow-lg">

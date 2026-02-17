@@ -112,8 +112,15 @@ export default function AssessmentPage() {
 
   return (
     <div className="max-w-3xl mx-auto">
-      <Card>
-        <CardHeader>
+      <Card className="relative overflow-hidden glass-effect border-primary/20">
+        <div className="absolute inset-0 opacity-5">
+          <img 
+            src="https://miaoda-site-img.s3cdn.medo.dev/images/KLing_729a0452-f37d-4c42-afce-ab675f5d33e5.jpg" 
+            alt="Traditional Ayurvedic medicine background"
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <CardHeader className="relative z-10">
           <CardTitle>Health Assessment</CardTitle>
           <CardDescription>
             Answer these questions to identify your dosha imbalances

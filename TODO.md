@@ -59,3 +59,13 @@
   - Smooth hover animations and transitions
   - Shadow effects for elevation
   - Gradient backgrounds on cards and sections
+  - Contextual background images on all major pages:
+    * Landing page hero: Ayurvedic herbs and spices (10% opacity)
+    * How it works section: Yoga meditation in nature (5% opacity)
+    * CTA section: Wellness spa stones and bamboo (5% opacity)
+    * Dashboard welcome: Ayurvedic herbs background (10% opacity)
+    * Diet plan page: Healthy organic vegetables and fruits (10% opacity)
+    * Exercise page: Yoga meditation peaceful nature (10% opacity)
+    * Assessment page: Traditional Ayurvedic medicine herbs (5% opacity)
+    * Chat page: Wellness spa peaceful background (5% opacity)
+  - All background images are subtle overlays that enhance without distracting from content
