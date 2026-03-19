@@ -2,13 +2,12 @@ import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { api } from '@/db/api';
-import { supabase } from '@/db/supabase';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { toast } from 'sonner';
-import { Leaf, Upload } from 'lucide-react';
+import { Leaf } from 'lucide-react';
 
 export default function DoctorRegisterPage() {
   const [email, setEmail] = useState('');
@@ -41,12 +40,16 @@ export default function DoctorRegisterPage() {
         return;
       }
 
-      const { data: { user } } = await supabase.auth.getUser();
-      if (!user) {
-        toast.error('Failed to get user information');
-        setLoading(false);
-        return;
+      // After signup, we log in automatically or user logs in.
+      // But for this simple app, we can just assume signup worked.
+      // We need the user ID. Our local AuthProvider should have set it or return it.
+      const storedUser = localStorage.getItem('user');
+      if (!storedUser) {
+          toast.error('Signup successful. Please login to complete profile.');
+          navigate('/login');
+          return;
       }
+      const user = JSON.parse(storedUser);
 
       await api.profiles.update(user.id, {
         full_name: fullName,
@@ -56,24 +59,27 @@ export default function DoctorRegisterPage() {
       let credentialsUrl = '';
       if (credentialsFile) {
         setUploading(true);
-        const fileName = `${user.id}/${Date.now()}_${credentialsFile.name}`;
-        const { data: uploadData, error: uploadError } = await supabase.storage
-          .from('mdpzmmvsonjershziahr_doctor_credentials')
-          .upload(fileName, credentialsFile);
+        const formData = new FormData();
+        formData.append('file', credentialsFile);
+        
+        const res = await fetch('/api/upload', {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`
+          },
+          body: formData
+        });
 
-        if (uploadError) {
-          console.error('Upload error:', uploadError);
-        } else if (uploadData) {
-          const { data: urlData } = supabase.storage
-            .from('mdpzmmvsonjershziahr_doctor_credentials')
-            .getPublicUrl(fileName);
-          credentialsUrl = urlData.publicUrl;
+        if (res.ok) {
+          const data = await res.json();
+          credentialsUrl = data.url;
         }
         setUploading(false);
       }
 
       await api.doctorProfiles.create({
         id: user.id,
+        user_id: user.id,
         registration_number: registrationNumber,
         credentials_url: credentialsUrl,
         specialization,

@@ -1,12 +1,15 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { api } from '@/db/api';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { Users, UserCheck, Activity } from 'lucide-react';
+import RemAide from '@/components/common/RemAide';
 
 export default function AdminDashboardPage() {
   const [stats, setStats] = useState({ users: 0, doctors: 0, assessments: 0 });
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const loadStats = async () => {
@@ -78,17 +81,18 @@ export default function AdminDashboardPage() {
         </CardHeader>
         <CardContent>
           <div className="space-y-2">
-            <a href="/admin/doctors" className="block p-4 border rounded-lg hover:bg-accent transition-colors">
+            <button type="button" onClick={() => navigate('/admin/doctors')} className="block w-full text-left p-4 border rounded-lg hover:bg-accent transition-colors">
               <p className="font-medium">Review Doctor Applications</p>
               <p className="text-sm text-muted-foreground">Approve or reject pending doctor registrations</p>
-            </a>
-            <a href="/admin/users" className="block p-4 border rounded-lg hover:bg-accent transition-colors">
+            </button>
+            <button type="button" onClick={() => navigate('/admin/users')} className="block w-full text-left p-4 border rounded-lg hover:bg-accent transition-colors">
               <p className="font-medium">Manage Users</p>
               <p className="text-sm text-muted-foreground">View and manage user accounts</p>
-            </a>
+            </button>
           </div>
         </CardContent>
       </Card>
+      <RemAide context="admin" />
     </div>
   );
 }

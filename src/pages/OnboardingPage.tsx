@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Textarea } from '@/components/ui/textarea';
 import { toast } from 'sonner';
 import { Leaf } from 'lucide-react';
+import RemAide from '@/components/common/RemAide';
 
 export default function OnboardingPage() {
   const [fullName, setFullName] = useState('');
@@ -152,6 +153,7 @@ export default function OnboardingPage() {
           </form>
         </CardContent>
       </Card>
+      <RemAide context="onboarding" />
     </div>
   );
 }

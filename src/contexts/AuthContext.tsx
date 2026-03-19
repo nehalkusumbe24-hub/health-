@@ -1,27 +1,37 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
-import { supabase } from '@/db/supabase';
-import type { User } from '@supabase/supabase-js';
 import type { Profile } from '@/types';
 
-export async function getProfile(userId: string): Promise<Profile | null> {
-  const { data, error } = await supabase
-    .from('profiles')
-    .select('*')
-    .eq('id', userId)
-    .maybeSingle();
+const API_URL = '';
 
-  if (error) {
-    console.error('获取用户信息失败:', error);
+export type User = {
+  id: string;
+  email?: string;
+  full_name?: string;
+  phone?: string;
+  role?: string;
+};
+
+export async function getProfile(userId: string): Promise<Profile | null> {
+  try {
+    const token = localStorage.getItem('token');
+    if (!token) return null;
+    const res = await fetch(`${API_URL}/api/data/profiles/${userId}`, {
+      headers: { Authorization: `Bearer ${token}` }
+    });
+    if (!res.ok) return null;
+    return await res.json();
+  } catch (error) {
+    console.error('Failed to get profile:', error);
     return null;
   }
-  return data;
 }
+
 interface AuthContextType {
   user: User | null;
   profile: Profile | null;
   loading: boolean;
   signInWithEmail: (email: string, password: string) => Promise<{ error: Error | null }>;
-  signUpWithEmail: (email: string, password: string) => Promise<{ error: Error | null }>;
+  signUpWithEmail: (email: string, password: string, fullName?: string) => Promise<{ error: Error | null }>;
   signInWithPhone: (phone: string) => Promise<{ error: Error | null }>;
   verifyOtp: (phone: string, token: string) => Promise<{ error: Error | null }>;
   signOut: () => Promise<void>;
@@ -36,103 +46,84 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   const refreshProfile = async () => {
-    if (!user) {
-      setProfile(null);
-      return;
-    }
-
+    if (!user) { setProfile(null); return; }
     const profileData = await getProfile(user.id);
     setProfile(profileData);
   };
 
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null);
-      if (session?.user) {
-        getProfile(session.user.id).then(setProfile);
+    const token = localStorage.getItem('token');
+    const storedUser = localStorage.getItem('user');
+    if (token && storedUser) {
+      try {
+        const u = JSON.parse(storedUser);
+        setUser(u);
+        getProfile(u.id).then(setProfile);
+      } catch (e) {
+        localStorage.removeItem('token');
+        localStorage.removeItem('user');
       }
-      setLoading(false);
-    });
-    // In this function, do NOT use any await calls. Use `.then()` instead to avoid deadlocks.
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
-      setUser(session?.user ?? null);
-      if (session?.user) {
-        getProfile(session.user.id).then(setProfile);
-      } else {
-        setProfile(null);
-      }
-    });
-
-    return () => subscription.unsubscribe();
+    }
+    setLoading(false);
   }, []);
 
   const signInWithEmail = async (email: string, password: string) => {
     try {
-      const { error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
+      const res = await fetch(`${API_URL}/auth/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
       });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Login failed');
 
-      if (error) throw error;
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('user', JSON.stringify(data.user));
+      setUser(data.user);
+      getProfile(data.user.id).then(setProfile);
       return { error: null };
     } catch (error) {
       return { error: error as Error };
     }
   };
 
-  const signUpWithEmail = async (email: string, password: string) => {
+  const signUpWithEmail = async (email: string, password: string, fullName?: string) => {
     try {
-      const { error } = await supabase.auth.signUp({
-        email,
-        password,
-        options: {
-          emailRedirectTo: window.location.origin,
-        },
+      const res = await fetch(`${API_URL}/auth/signup`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password, full_name: fullName || '' })
       });
-
-      if (error) throw error;
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Signup failed');
       return { error: null };
     } catch (error) {
       return { error: error as Error };
     }
   };
 
-  const signInWithPhone = async (phone: string) => {
-    try {
-      const { error } = await supabase.auth.signInWithOtp({
-        phone,
-      });
-
-      if (error) throw error;
-      return { error: null };
-    } catch (error) {
-      return { error: error as Error };
-    }
+  const signInWithPhone = async (_phone: string) => {
+    return { error: new Error('Phone login is not available. Please use email login.') };
   };
 
-  const verifyOtp = async (phone: string, token: string) => {
-    try {
-      const { error } = await supabase.auth.verifyOtp({
-        phone,
-        token,
-        type: 'sms',
-      });
-
-      if (error) throw error;
-      return { error: null };
-    } catch (error) {
-      return { error: error as Error };
-    }
+  const verifyOtp = async (_phone: string, _token: string) => {
+    return { error: new Error('OTP verification is not available.') };
   };
 
   const signOut = async () => {
-    await supabase.auth.signOut();
+    localStorage.removeItem('token');
+    localStorage.removeItem('user');
     setUser(null);
     setProfile(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, profile, loading, signInWithEmail, signUpWithEmail, signInWithPhone, verifyOtp, signOut, refreshProfile }}>
+    <AuthContext.Provider value={{
+      user, profile, loading,
+      signInWithEmail, signUpWithEmail,
+      signInWithPhone, verifyOtp,
+      signOut, refreshProfile
+    }}>
       {children}
     </AuthContext.Provider>
   );

@@ -8,6 +8,7 @@ import { toast } from 'sonner';
 import { useAuth } from '@/contexts/AuthContext';
 import { CheckCircle, XCircle } from 'lucide-react';
 import type { DoctorProfile } from '@/types';
+import RemAide from '@/components/common/RemAide';
 
 export default function AdminDoctorsPage() {
   const { profile } = useAuth();
@@ -144,6 +145,7 @@ export default function AdminDoctorsPage() {
           ))}
         </div>
       )}
+      <RemAide context="admin" />
     </div>
   );
 }

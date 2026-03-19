@@ -7,6 +7,7 @@ import { Users, Activity, FileText, MessageSquare } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import type { Assessment } from '@/types';
+import RemAide from '@/components/common/RemAide';
 
 export default function DoctorDashboardPage() {
   const { profile } = useAuth();
@@ -102,6 +103,7 @@ export default function DoctorDashboardPage() {
           )}
         </CardContent>
       </Card>
+      <RemAide context="doctor" />
     </div>
   );
 }

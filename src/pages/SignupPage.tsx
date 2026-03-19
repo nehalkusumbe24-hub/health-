@@ -1,17 +1,15 @@
 import { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { toast } from 'sonner';
-import { Leaf } from 'lucide-react';
+import { Leaf, Mail, Lock, Eye, EyeOff, Loader2, UserPlus, User } from 'lucide-react';
 
 export default function SignupPage() {
+  const [fullName, setFullName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   const { signUpWithEmail } = useAuth();
   const navigate = useNavigate();
@@ -23,96 +21,188 @@ export default function SignupPage() {
       toast.error('Passwords do not match');
       return;
     }
-
     if (password.length < 6) {
       toast.error('Password must be at least 6 characters');
       return;
     }
 
     setLoading(true);
-
-    const { error } = await signUpWithEmail(email, password);
-
+    const { error } = await signUpWithEmail(email.trim().toLowerCase(), password, fullName.trim());
     if (error) {
-      toast.error(error.message);
+      toast.error(error.message || 'Failed to create account');
     } else {
-      toast.success('Account created! Please check your email to verify your account.');
+      toast.success('Account created! Please sign in. 🙏');
       navigate('/login');
     }
-
     setLoading(false);
   };
 
+  const inputStyle: React.CSSProperties = {
+    background: 'hsl(220 18% 12%)',
+    border: '1px solid hsl(220 14% 20%)',
+    color: 'hsl(210 20% 92%)',
+  };
+
+  const focusStyle = (e: React.FocusEvent<HTMLInputElement>) =>
+    (e.currentTarget.style.borderColor = 'hsl(158 70% 48% / 0.6)');
+  const blurStyle = (e: React.FocusEvent<HTMLInputElement>) =>
+    (e.currentTarget.style.borderColor = 'hsl(220 14% 20%)');
+
   return (
-    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden">
-      <div className="absolute inset-0 pattern-dots opacity-40" />
-      <div className="absolute top-20 left-10 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/10 rounded-full blur-3xl" />
-      
-      <Card className="w-full max-w-md relative z-10 glass-effect border-primary/20">
-        <CardHeader className="text-center">
-          <div className="flex justify-center mb-4">
-            <div className="h-16 w-16 rounded-full gradient-bg flex items-center justify-center shadow-lg">
-              <Leaf className="h-8 w-8 text-primary" />
-            </div>
-          </div>
-          <CardTitle className="text-2xl">Create Account</CardTitle>
-          <CardDescription>Join Ayurvedic Health Advisor to start your wellness journey</CardDescription>
-        </CardHeader>
+    <div className="min-h-screen flex items-center justify-center p-4 relative overflow-hidden"
+         style={{ background: 'hsl(220 20% 5%)' }}>
+      <div className="absolute inset-0 pattern-dots opacity-30 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] rounded-full pointer-events-none"
+           style={{ background: 'radial-gradient(circle, hsl(265 60% 65% / 0.07) 0%, transparent 70%)' }} />
+      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] rounded-full pointer-events-none"
+           style={{ background: 'radial-gradient(circle, hsl(158 70% 48% / 0.07) 0%, transparent 70%)' }} />
 
-        <CardContent>
+      <div className="w-full max-w-md relative z-10">
+        {/* Logo */}
+        <div className="flex flex-col items-center mb-8">
+          <div className="h-16 w-16 rounded-2xl flex items-center justify-center mb-4 animate-glow-pulse"
+               style={{ background: 'hsl(158 70% 48% / 0.12)', border: '1px solid hsl(158 70% 48% / 0.35)' }}>
+            <Leaf className="h-8 w-8" style={{ color: '#34d399' }} />
+          </div>
+          <h1 className="text-2xl font-bold text-foreground" style={{ fontFamily: 'Outfit, sans-serif' }}>
+            Ayur<span style={{ color: '#34d399' }}>veda</span>
+          </h1>
+          <p className="text-xs text-muted-foreground uppercase tracking-widest mt-1">Health Advisor</p>
+        </div>
+
+        {/* Card */}
+        <div className="rounded-2xl p-8"
+             style={{ background: 'hsl(220 18% 9%)', border: '1px solid hsl(220 14% 16%)' }}>
+          <h2 className="text-xl font-bold mb-1" style={{ fontFamily: 'Outfit, sans-serif' }}>Create account</h2>
+          <p className="text-sm text-muted-foreground mb-6">Begin your Ayurvedic wellness journey today</p>
+
           <form onSubmit={handleSignup} className="space-y-4">
-            <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                placeholder="your@email.com"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
+            {/* Full Name */}
+            <div className="space-y-1.5">
+              <label className="text-sm font-medium text-foreground/80" htmlFor="fullName">Full name</label>
+              <div className="relative">
+                <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                <input
+                  id="fullName"
+                  type="text"
+                  placeholder="Your full name"
+                  value={fullName}
+                  onChange={e => setFullName(e.target.value)}
+                  autoComplete="name"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl text-sm outline-none transition-all duration-200"
+                  style={inputStyle}
+                  onFocus={focusStyle}
+                  onBlur={blurStyle}
+                />
+              </div>
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="password">Password</Label>
-              <Input
-                id="password"
-                type="password"
-                placeholder="••••••••"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
+            {/* Email */}
+            <div className="space-y-1.5">
+              <label className="text-sm font-medium text-foreground/80" htmlFor="email">Email address</label>
+              <div className="relative">
+                <Mail className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                <input
+                  id="email"
+                  type="email"
+                  placeholder="you@example.com"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
+                  required
+                  autoComplete="email"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl text-sm outline-none transition-all duration-200"
+                  style={inputStyle}
+                  onFocus={focusStyle}
+                  onBlur={blurStyle}
+                />
+              </div>
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="confirmPassword">Confirm Password</Label>
-              <Input
-                id="confirmPassword"
-                type="password"
-                placeholder="••••••••"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                required
-              />
+            {/* Password */}
+            <div className="space-y-1.5">
+              <label className="text-sm font-medium text-foreground/80" htmlFor="password">Password</label>
+              <div className="relative">
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                <input
+                  id="password"
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder="Min. 6 characters"
+                  value={password}
+                  onChange={e => setPassword(e.target.value)}
+                  required
+                  autoComplete="new-password"
+                  className="w-full pl-10 pr-10 py-2.5 rounded-xl text-sm outline-none transition-all duration-200"
+                  style={inputStyle}
+                  onFocus={focusStyle}
+                  onBlur={blurStyle}
+                />
+                <button
+                  type="button"
+                  onClick={() => setShowPassword(v => !v)}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  {showPassword ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+                </button>
+              </div>
             </div>
 
-            <Button type="submit" className="w-full" disabled={loading}>
-              {loading ? 'Creating account...' : 'Sign Up'}
-            </Button>
+            {/* Confirm Password */}
+            <div className="space-y-1.5">
+              <label className="text-sm font-medium text-foreground/80" htmlFor="confirmPassword">Confirm password</label>
+              <div className="relative">
+                <Lock className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
+                <input
+                  id="confirmPassword"
+                  type={showPassword ? 'text' : 'password'}
+                  placeholder="Re-enter password"
+                  value={confirmPassword}
+                  onChange={e => setConfirmPassword(e.target.value)}
+                  required
+                  autoComplete="new-password"
+                  className="w-full pl-10 pr-4 py-2.5 rounded-xl text-sm outline-none transition-all duration-200"
+                  style={{
+                    ...inputStyle,
+                    borderColor: confirmPassword && confirmPassword !== password
+                      ? 'hsl(0 72% 55% / 0.6)'
+                      : 'hsl(220 14% 20%)',
+                  }}
+                  onFocus={focusStyle}
+                  onBlur={blurStyle}
+                />
+              </div>
+              {confirmPassword && confirmPassword !== password && (
+                <p className="text-xs" style={{ color: 'hsl(0 72% 55%)' }}>Passwords do not match</p>
+              )}
+            </div>
+
+            {/* Submit */}
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full flex items-center justify-center gap-2 py-2.5 rounded-xl text-sm font-semibold transition-all duration-200 hover:opacity-90 disabled:opacity-50 hover-lift mt-2"
+              style={{ background: '#34d399', color: 'hsl(220 20% 6%)', border: 'none' }}
+            >
+              {loading
+                ? <><Loader2 className="h-4 w-4 animate-spin" /> Creating account...</>
+                : <><UserPlus className="h-4 w-4" /> Create Account</>
+              }
+            </button>
           </form>
-        </CardContent>
 
-        <CardFooter className="flex flex-col gap-2">
-          <div className="text-sm text-center text-muted-foreground">
-            Already have an account?{' '}
-            <Link to="/login" className="text-primary hover:underline">
-              Sign in
-            </Link>
+          <div className="mt-5 text-center text-sm">
+            <p className="text-muted-foreground">
+              Already have an account?{' '}
+              <Link to="/login" className="font-medium transition-colors hover:opacity-80" style={{ color: '#34d399' }}>
+                Sign in
+              </Link>
+            </p>
           </div>
-        </CardFooter>
-      </Card>
+        </div>
+
+        <p className="text-center text-xs text-muted-foreground mt-6">
+          Your health data is encrypted and never shared.
+        </p>
+      </div>
     </div>
   );
 }

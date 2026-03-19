@@ -90,6 +90,7 @@ If a user asks about serious symptoms or complex health issues, politely suggest
     return new Response(
       JSON.stringify({
         response: aiResponse,
+        message: aiResponse,
         shouldEscalate,
       }),
       { headers: { ...corsHeaders, 'Content-Type': 'application/json' } }
