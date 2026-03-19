@@ -1,0 +1,790 @@
+{
+  "profiles": [
+    {
+      "id": "1c45df14-4771-4af4-a76a-210e59127b2d",
+      "email": "nehalkusumbe245@gmail.com",
+      "is_doctor": false
+    },
+    {
+      "id": "49614f52-cf52-4acb-94ab-993f426544b6",
+      "email": "nehalkusumbe246@gmail.com",
+      "is_doctor": false
+    },
+    {
+      "id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "email": "nehalkusumbe244@gmail.com",
+      "is_doctor": false
+    },
+    {
+      "id": "4e019e9d-618b-4745-88e7-921dc3ce3918",
+      "email": "test@test.com",
+      "is_doctor": false
+    },
+    {
+      "id": "e11ab97d-8849-4e42-8382-60735c869c03",
+      "email": "verify@test.com",
+      "phone": "",
+      "full_name": "Test User",
+      "is_doctor": false,
+      "role": "user",
+      "created_at": "2026-03-18T04:21:32.300Z"
+    },
+    {
+      "id": "abb91d50-ae0d-4c8b-a808-ae6cc795c27e",
+      "email": "chandakusumbe56@gmail.com",
+      "phone": "",
+      "full_name": "chanda kusumbe",
+      "is_doctor": false,
+      "role": "user",
+      "created_at": "2026-03-18T05:37:55.862Z"
+    },
+    {
+      "id": "eaf4b41a-1d87-491e-a6da-a3a298eb2003",
+      "email": "tester123@example.com",
+      "phone": "",
+      "full_name": "Tester",
+      "is_doctor": false,
+      "role": "user",
+      "created_at": "2026-03-19T06:06:42.958Z"
+    }
+  ],
+  "doctors": [],
+  "patients": [
+    {
+      "id": "2cd8c64e-5220-4f05-a37d-0b18bfcafb28",
+      "user_id": "1c45df14-4771-4af4-a76a-210e59127b2d"
+    },
+    {
+      "id": "b7cd66a3-7117-4825-85c5-b8d789306487",
+      "user_id": "49614f52-cf52-4acb-94ab-993f426544b6"
+    },
+    {
+      "id": "05ec6987-7a8c-499d-948f-238f8bbcf858",
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427"
+    },
+    {
+      "id": "9c612ce1-3d10-4f33-af00-5feda4c631ae",
+      "user_id": "4e019e9d-618b-4745-88e7-921dc3ce3918"
+    },
+    {
+      "id": "5f21b594-cc38-4595-b0e2-19fc698f5bdb",
+      "user_id": "e11ab97d-8849-4e42-8382-60735c869c03",
+      "created_at": "2026-03-18T04:21:32.300Z"
+    },
+    {
+      "id": "b6c71caf-d0cd-4595-8fe9-cdb2e53fd1e1",
+      "user_id": "abb91d50-ae0d-4c8b-a808-ae6cc795c27e",
+      "created_at": "2026-03-18T05:37:55.862Z"
+    },
+    {
+      "id": "70a50f05-390a-431c-838c-afa316cf6c25",
+      "user_id": "eaf4b41a-1d87-491e-a6da-a3a298eb2003",
+      "created_at": "2026-03-19T06:06:42.958Z"
+    }
+  ],
+  "appointments": [],
+  "medical_records": [],
+  "chat_messages": [
+    {
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "message": "not felling well",
+      "id": "76d861b8-4ea8-4e83-8b52-79d6b7aa8244",
+      "created_at": "2026-03-15T02:09:56.146Z",
+      "response": "Hello from your local Ayurvedic AI advisor!"
+    },
+    {
+      "user_id": "49614f52-cf52-4acb-94ab-993f426544b6",
+      "message": "hello i am  nehal not fell well",
+      "id": "96d4358d-89bf-4870-bc8d-4c8f256993f9",
+      "created_at": "2026-03-15T02:11:24.553Z",
+      "response": "Hello from your local Ayurvedic AI advisor!"
+    },
+    {
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "message": "tell me something",
+      "id": "7b13bc6d-745e-4171-b0fc-a92836d71f65",
+      "created_at": "2026-03-15T02:13:30.100Z",
+      "response": "Hello from your local Ayurvedic AI advisor!"
+    },
+    {
+      "user_id": "4e019e9d-618b-4745-88e7-921dc3ce3918",
+      "message": "What is my Dosha type?",
+      "id": "5f3e3c7d-351a-4f18-9b93-c56480233294",
+      "created_at": "2026-03-17T17:05:07.761Z",
+      "response": "🌿 **Doshas** are the three fundamental bio-energies in Ayurveda that govern all physical and mental processes:\n\n1. **Vata** (Air + Space) — Movement & creativity\n2. **Pitta** (Fire + Water) — Transformation & digestion\n3. **Kapha** (Earth + Water) — Structure & stability\n\nEveryone has a unique combination (Prakriti). When doshas go out of balance (Vikriti), health issues arise. The goal of Ayurveda is to restore your natural balance through diet, lifestyle, and herbal remedies."
+    },
+    {
+      "user_id": "4e019e9d-618b-4745-88e7-921dc3ce3918",
+      "message": "Yoga for stress",
+      "id": "38603d81-b88e-4622-8324-22b932c954ed",
+      "created_at": "2026-03-17T17:06:28.368Z",
+      "response": "🧘 **Ayurvedic Stress Management:**\n\n• **Pranayama:** Practice Nadi Shodhana (alternate nostril breathing) — 5 min daily\n• **Herbs:** Ashwagandha, Brahmi, Jatamansi are excellent adaptogens\n• **Abhyanga:** Daily warm oil self-massage calms the nervous system\n• **Meditation:** Start with 10 minutes of silent sitting\n• **Routine:** Follow a consistent daily routine (Dinacharya)\n• **Warm bath:** Add a few drops of lavender oil\n• **Diet:** Avoid caffeine, eat warm, nourishing foods\n• **Exercise:** Gentle yoga, walking in nature"
+    },
+    {
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "message": "hi",
+      "id": "294134d5-f96c-462a-b8b3-09722427cfb5",
+      "created_at": "2026-03-18T05:28:08.180Z",
+      "response": "🙏 **Namaste! I'm your Ayurvedic AI Health Assistant.**\n\nI can answer questions about:\n\n🫁 **Doshas** — Vata, Pitta, Kapha\n🍽️ **Diet & Nutrition** — food for your type\n🌿 **Herbs & Remedies** — natural treatments\n🧘 **Yoga & Pranayama** — dosha-specific practices\n💊 **Health Conditions** — BP, diabetes, joints, skin, hair, digestion, sleep, stress, immunity, liver, kidneys, eyes, memory, hormones\n🌅 **Daily Routine** — Dinacharya & seasonal tips\n🔥 **Detox & Fasting** — Panchakarma, Triphala\n\nJust type your question or symptom and I'll help!"
+    },
+    {
+      "user_id": "abb91d50-ae0d-4c8b-a808-ae6cc795c27e",
+      "message": "hi",
+      "id": "d9c867d8-ee11-4a18-b6e5-b63cbcbe190f",
+      "created_at": "2026-03-18T05:38:24.646Z",
+      "response": "🙏 **Namaste! I'm your Ayurvedic AI Health Assistant.**\n\nI can answer questions about:\n\n🫁 **Doshas** — Vata, Pitta, Kapha\n🍽️ **Diet & Nutrition** — food for your type\n🌿 **Herbs & Remedies** — natural treatments\n🧘 **Yoga & Pranayama** — dosha-specific practices\n💊 **Health Conditions** — BP, diabetes, joints, skin, hair, digestion, sleep, stress, immunity, liver, kidneys, eyes, memory, hormones\n🌅 **Daily Routine** — Dinacharya & seasonal tips\n🔥 **Detox & Fasting** — Panchakarma, Triphala\n\nJust type your question or symptom and I'll help!"
+    },
+    {
+      "user_id": "abb91d50-ae0d-4c8b-a808-ae6cc795c27e",
+      "message": "sleep",
+      "id": "1c8b32b0-5038-488b-a05a-10e259b4b63b",
+      "created_at": "2026-03-18T05:38:37.198Z",
+      "response": "😴 **Ayurvedic Sleep Remedies:**\n\n• Bed by **10 PM** (Kapha time for deepest sleep)\n• Warm milk + pinch of nutmeg + cardamom at bedtime\n• Brahmi or Ashwagandha herb before sleep\n• Foot massage with warm sesame or brahmi oil\n• Avoid screens 1 hour before sleep\n• Yoga Nidra meditation (20 min) before bed\n• Keep bedroom cool, dark and quiet"
+    },
+    {
+      "user_id": "eaf4b41a-1d87-491e-a6da-a3a298eb2003",
+      "message": "What is my Dosha type?",
+      "id": "6f4c3eee-fcb5-40dc-9b86-fd397b3efd23",
+      "created_at": "2026-03-19T06:10:47.327Z",
+      "response": "🌿 **The Three Doshas:**\n\n1. **Vata** (Air + Space) — Movement, creativity, communication\n2. **Pitta** (Fire + Water) — Metabolism, digestion, intelligence\n3. **Kapha** (Earth + Water) — Structure, lubrication, stability\n\nEveryone has a unique mix called **Prakriti** (constitution). Imbalance (Vikriti) causes disease. Ayurveda restores balance through diet, lifestyle & herbs."
+    },
+    {
+      "user_id": "eaf4b41a-1d87-491e-a6da-a3a298eb2003",
+      "message": "What is Vata?",
+      "id": "f05122b7-febf-4ccb-b8ab-3a612e28634a",
+      "created_at": "2026-03-19T06:11:15.396Z",
+      "response": "🌬️ **Vata Dosha** (Air + Space)\n\nCreative, quick-thinking, energetic. When imbalanced: anxiety, dry skin, constipation, insomnia.\n\n**Balance with:**\n• Warm, cooked, slightly oily foods (ghee, sesame oil)\n• Regular daily routine — same wake/sleep times\n• Warm herbal teas: ginger, licorice, cinnamon\n• Grounding yoga: Tree Pose, Child's Pose, forward bends\n• Sesame oil self-massage (Abhyanga) daily"
+    },
+    {
+      "user_id": "eaf4b41a-1d87-491e-a6da-a3a298eb2003",
+      "message": "Vata dosha tips",
+      "id": "46d011a4-bf65-443a-b6fd-c68a115c5d88",
+      "created_at": "2026-03-19T06:17:04.137Z",
+      "response": "🌬️ **Vata Dosha** (Air + Space)\n\nCreative, quick-thinking, energetic. When imbalanced: anxiety, dry skin, constipation, insomnia.\n\n**Balance with:**\n• Warm, cooked, slightly oily foods (ghee, sesame oil)\n• Regular daily routine — same wake/sleep times\n• Warm herbal teas: ginger, licorice, cinnamon\n• Grounding yoga: Tree Pose, Child's Pose, forward bends\n• Sesame oil self-massage (Abhyanga) daily"
+    },
+    {
+      "user_id": "eaf4b41a-1d87-491e-a6da-a3a298eb2003",
+      "message": "Best herbs",
+      "id": "39087dbd-82b3-4115-888f-352f30bac331",
+      "created_at": "2026-03-19T06:17:12.496Z",
+      "response": "🌿 **Key Ayurvedic Herbs Quick Reference:**\n\n| Herb | Primary Use |\n|---|---|\n| **Ashwagandha** | Stress, energy, immunity |\n| **Brahmi** | Memory, anxiety, focus |\n| **Triphala** | Digestion, detox, anti-aging |\n| **Tulsi** | Cold, cough, immunity |\n| **Shatavari** | Women's health, hormones |\n| **Guduchi (Giloy)** | Fever, immunity, liver |\n| **Guggul** | Cholesterol, joints, thyroid |\n| **Shallaki** | Arthritis, joint pain |\n| **Neem** | Skin, blood purifier |\n| **Amla (Amalaki)** | Vitamin C, hair, anti-aging |\n\n⚠️ Always consult a qualified Ayurvedic practitioner before starting herbs."
+    },
+    {
+      "user_id": "eaf4b41a-1d87-491e-a6da-a3a298eb2003",
+      "message": "Sleep naturally",
+      "id": "ed7c4505-bbbc-40a5-ab64-de5ae37f287a",
+      "created_at": "2026-03-19T06:17:20.292Z",
+      "response": "😴 **Ayurvedic Sleep Remedies:**\n\n• Bed by **10 PM** (Kapha time for deepest sleep)\n• Warm milk + pinch of nutmeg + cardamom at bedtime\n• Brahmi or Ashwagandha herb before sleep\n• Foot massage with warm sesame or brahmi oil\n• Avoid screens 1 hour before sleep\n• Yoga Nidra meditation (20 min) before bed\n• Keep bedroom cool, dark and quiet"
+    },
+    {
+      "user_id": "eaf4b41a-1d87-491e-a6da-a3a298eb2003",
+      "message": "What are the benefits of Ashwagandha?",
+      "id": "81d56e7a-eef9-4e8e-8b02-a3da7eb997fa",
+      "created_at": "2026-03-19T06:20:24.747Z",
+      "response": "💪 **Ashwagandha — The Strength Herb:**\n\n• Reduces **cortisol** (stress hormone) significantly\n• Improves strength, stamina, and muscle mass\n• Balances thyroid hormones (both hypo and hyper)\n• Boosts testosterone and reproductive health in men\n• Improves sleep quality when taken at night with milk\n• Enhances immunity and builds Ojas (vital energy)\n\n**How to take:** 1/4 to 1/2 tsp with warm milk at bedtime OR capsule form 300-600mg daily\n⚠️ Avoid during pregnancy"
+    },
+    {
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "message": "hi",
+      "id": "10669ade-7fb8-4def-b275-0497b1c78b1f",
+      "created_at": "2026-03-19T06:22:24.611Z",
+      "response": "🙏 **Namaste! I'm your Ayurvedic AI Health Assistant.**\n\nI can answer questions about:\n\n🫁 **Doshas** — Vata, Pitta, Kapha\n🍽️ **Diet & Nutrition** — food for your type\n🌿 **Herbs & Remedies** — natural treatments\n🧘 **Yoga & Pranayama** — dosha-specific practices\n💊 **Health Conditions** — BP, diabetes, joints, skin, hair, digestion, sleep, stress, immunity, liver, kidneys, eyes, memory, hormones\n🌅 **Daily Routine** — Dinacharya & seasonal tips\n🔥 **Detox & Fasting** — Panchakarma, Triphala\n\nJust type your question or symptom and I'll help!"
+    }
+  ],
+  "auth_users": [
+    {
+      "id": "1c45df14-4771-4af4-a76a-210e59127b2d",
+      "email": "nehalkusumbe245@gmail.com",
+      "password_hash": "$2b$10$sMlHU12NZUO7wNG2/f4nHO72R40NlPajq4MD.9HdxvgAivE5bij5."
+    },
+    {
+      "id": "49614f52-cf52-4acb-94ab-993f426544b6",
+      "email": "nehalkusumbe246@gmail.com",
+      "password_hash": "$2b$10$G4XmKy.aSYFWZFfg5ZiJWuIvEJpCnylAcw7OYsoROuZ2/dkDZNZj6"
+    },
+    {
+      "id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "email": "nehalkusumbe244@gmail.com",
+      "password_hash": "$2b$10$WWcbjokaPNyl09GRmYBQC./y/Npi3Y9wMCFC8SZta3oYT6nD1QoBa"
+    },
+    {
+      "id": "4e019e9d-618b-4745-88e7-921dc3ce3918",
+      "email": "test@test.com",
+      "password_hash": "$2b$10$UddNpWo5itH6EsEOA0aJKOtjTPnV26aPFWNqwk6HW2lmiaVYO16De"
+    },
+    {
+      "id": "e11ab97d-8849-4e42-8382-60735c869c03",
+      "email": "verify@test.com",
+      "phone": "",
+      "password_hash": "$2b$10$.tQ3basUOKDzcKUu4z3CE.vEjA.M0JuGXuYntBueeNbReqrWQD3Ky",
+      "created_at": "2026-03-18T04:21:32.300Z"
+    },
+    {
+      "id": "abb91d50-ae0d-4c8b-a808-ae6cc795c27e",
+      "email": "chandakusumbe56@gmail.com",
+      "phone": "",
+      "password_hash": "$2b$10$TDqFusHd51g3OelkaFRDe.CpG76jyKPjy.mYTjfkNG.MIDcc4ciku",
+      "created_at": "2026-03-18T05:37:55.862Z"
+    },
+    {
+      "id": "eaf4b41a-1d87-491e-a6da-a3a298eb2003",
+      "email": "tester123@example.com",
+      "phone": "",
+      "password_hash": "$2b$10$cWnCwpcF3mf0TLKYwpIp4.edKDvFjlhAajBuSDeIuF3.sM2qLP2be",
+      "created_at": "2026-03-19T06:06:42.958Z"
+    }
+  ],
+  "assessments": [
+    {
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "symptoms": [
+        "Dry skin",
+        "Joint pain"
+      ],
+      "daily_habits": {
+        "digestion": "slow",
+        "sleep": "",
+        "energy": "",
+        "stress": "high"
+      },
+      "physical_attributes": {
+        "skin": "",
+        "body_type": "thin",
+        "appetite": "steady"
+      },
+      "mental_patterns": {
+        "stress_level": "high"
+      },
+      "dosha_results": {
+        "primary": "vata",
+        "secondary": "kapha",
+        "severity": "mild"
+      },
+      "primary_dosha": "vata",
+      "secondary_dosha": "kapha",
+      "imbalance_severity": "mild",
+      "status": "completed",
+      "id": "a8aea097-ede5-4a16-9b8d-a1b8d7022002",
+      "created_at": "2026-03-18T04:26:05.832Z"
+    },
+    {
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "symptoms": [
+        "Dry skin"
+      ],
+      "daily_habits": {
+        "digestion": "irregular",
+        "sleep": "",
+        "energy": "steady",
+        "stress": "moderate"
+      },
+      "physical_attributes": {
+        "skin": "",
+        "body_type": "heavy",
+        "appetite": "steady"
+      },
+      "mental_patterns": {
+        "stress_level": "moderate"
+      },
+      "dosha_results": {
+        "primary": "vata",
+        "secondary": "kapha",
+        "severity": "mild"
+      },
+      "primary_dosha": "vata",
+      "secondary_dosha": "kapha",
+      "imbalance_severity": "mild",
+      "status": "completed",
+      "id": "a70628ed-8294-401a-af4c-6d492bd77ef2",
+      "created_at": "2026-03-18T04:27:41.664Z"
+    },
+    {
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "symptoms": [
+        "Excessive heat"
+      ],
+      "daily_habits": {
+        "digestion": "irregular",
+        "sleep": "light",
+        "energy": "variable",
+        "stress": "high"
+      },
+      "physical_attributes": {
+        "skin": "",
+        "body_type": "heavy",
+        "appetite": "steady"
+      },
+      "mental_patterns": {
+        "stress_level": "high"
+      },
+      "dosha_results": {
+        "primary": "vata",
+        "secondary": "kapha",
+        "severity": "mild"
+      },
+      "primary_dosha": "vata",
+      "secondary_dosha": "kapha",
+      "imbalance_severity": "mild",
+      "status": "completed",
+      "id": "9c4587ed-47a8-4880-9e53-ee21ee886846",
+      "created_at": "2026-03-18T04:33:00.553Z"
+    },
+    {
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "symptoms": [
+        "Dry skin",
+        "Anxiety",
+        "Skin rashes"
+      ],
+      "daily_habits": {
+        "digestion": "irregular",
+        "sleep": "light",
+        "energy": "intense",
+        "stress": "moderate"
+      },
+      "physical_attributes": {
+        "skin": "",
+        "body_type": "medium",
+        "appetite": "variable"
+      },
+      "mental_patterns": {
+        "stress_level": "moderate"
+      },
+      "dosha_results": {
+        "primary": "vata",
+        "secondary": "pitta",
+        "severity": "moderate"
+      },
+      "primary_dosha": "vata",
+      "secondary_dosha": "pitta",
+      "imbalance_severity": "moderate",
+      "status": "completed",
+      "id": "d678650c-8df8-4dfe-859c-ba88e27a1959",
+      "created_at": "2026-03-18T05:13:31.212Z"
+    },
+    {
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "symptoms": [
+        "Dry skin",
+        "Joint pain",
+        "Skin rashes",
+        "Slow digestion"
+      ],
+      "daily_habits": {
+        "digestion": "irregular",
+        "sleep": "moderate",
+        "energy": "steady",
+        "stress": "high"
+      },
+      "physical_attributes": {
+        "skin": "",
+        "body_type": "thin",
+        "appetite": "steady"
+      },
+      "mental_patterns": {
+        "stress_level": "high"
+      },
+      "dosha_results": {
+        "primary": "vata",
+        "secondary": "kapha",
+        "severity": "moderate"
+      },
+      "primary_dosha": "vata",
+      "secondary_dosha": "kapha",
+      "imbalance_severity": "moderate",
+      "status": "completed",
+      "id": "294f0a41-4609-4f8a-b278-f4e22f678c19",
+      "created_at": "2026-03-18T05:59:59.032Z"
+    },
+    {
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "symptoms": [
+        "Anxiety",
+        "Joint pain"
+      ],
+      "daily_habits": {
+        "digestion": "irregular",
+        "sleep": "light",
+        "energy": "variable",
+        "stress": "high"
+      },
+      "physical_attributes": {
+        "skin": "",
+        "body_type": "medium",
+        "appetite": "steady"
+      },
+      "mental_patterns": {
+        "stress_level": "high"
+      },
+      "dosha_results": {
+        "primary": "vata",
+        "secondary": "pitta",
+        "severity": "moderate"
+      },
+      "primary_dosha": "vata",
+      "secondary_dosha": "pitta",
+      "imbalance_severity": "moderate",
+      "status": "completed",
+      "id": "f789bd3e-d721-46da-b1ac-74de0020d961",
+      "created_at": "2026-03-18T06:02:12.442Z"
+    },
+    {
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "symptoms": [
+        "Dry skin",
+        "Anxiety",
+        "Constipation"
+      ],
+      "daily_habits": {
+        "digestion": "irregular",
+        "sleep": "light",
+        "energy": "variable",
+        "stress": "moderate"
+      },
+      "physical_attributes": {
+        "skin": "",
+        "body_type": "heavy",
+        "appetite": "steady"
+      },
+      "mental_patterns": {
+        "stress_level": "moderate"
+      },
+      "dosha_results": {
+        "primary": "vata",
+        "secondary": "kapha",
+        "severity": "moderate"
+      },
+      "primary_dosha": "vata",
+      "secondary_dosha": "kapha",
+      "imbalance_severity": "moderate",
+      "status": "completed",
+      "id": "f3a3428e-0675-46f5-8bb7-27162f8bb286",
+      "created_at": "2026-03-19T06:14:09.144Z"
+    }
+  ],
+  "diet_plans": [],
+  "exercise_plans": [],
+  "habit_tracking": [],
+  "prescriptions": [],
+  "login_logs": [
+    {
+      "id": "6d2a6f05-317f-49b5-b713-cf5fcb62b5c8",
+      "user_id": "4e019e9d-618b-4745-88e7-921dc3ce3918",
+      "email": "test@test.com",
+      "phone": null,
+      "action": "login",
+      "status": "failed_wrong_password",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.7705",
+      "timestamp": "2026-03-18T04:21:08.634Z"
+    },
+    {
+      "id": "6255f5ca-5d2e-4a17-8d6e-20182751add8",
+      "user_id": "e11ab97d-8849-4e42-8382-60735c869c03",
+      "email": "verify@test.com",
+      "phone": null,
+      "action": "signup",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT; Windows NT 10.0; en-IN) WindowsPowerShell/5.1.26100.7705",
+      "timestamp": "2026-03-18T04:21:32.300Z"
+    },
+    {
+      "id": "b75e4f76-73b4-497d-8cfe-f75b3db1e9df",
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "email": "nehalkusumbe244@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+      "timestamp": "2026-03-18T04:25:23.430Z"
+    },
+    {
+      "id": "fbc65837-5124-4220-abe2-4c485441ed0e",
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "email": "nehalkusumbe244@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+      "timestamp": "2026-03-18T04:26:32.423Z"
+    },
+    {
+      "id": "0d818f3c-a03a-4966-8d1a-437de19a2d37",
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "email": "nehalkusumbe244@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+      "timestamp": "2026-03-18T04:28:07.680Z"
+    },
+    {
+      "id": "397fa9b6-936c-4e73-a6b7-1cebe1c16ae5",
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "email": "nehalkusumbe244@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+      "timestamp": "2026-03-18T04:29:54.176Z"
+    },
+    {
+      "id": "75a26b39-d79c-408a-b4d5-ff15ca323c90",
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "email": "nehalkusumbe244@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+      "timestamp": "2026-03-18T04:31:47.576Z"
+    },
+    {
+      "id": "f66fe04d-9a21-4ed4-9129-7865e09d3257",
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "email": "nehalkusumbe244@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+      "timestamp": "2026-03-18T04:33:28.122Z"
+    },
+    {
+      "id": "b0ffa466-9d61-4554-935b-1e7787683b20",
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "email": "nehalkusumbe244@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+      "timestamp": "2026-03-18T04:44:34.367Z"
+    },
+    {
+      "id": "c03757e1-ac42-457d-9ff7-070a44b7c69e",
+      "user_id": "4e019e9d-618b-4745-88e7-921dc3ce3918",
+      "email": "test@test.com",
+      "phone": null,
+      "action": "login",
+      "status": "failed_wrong_password",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+      "timestamp": "2026-03-18T05:05:32.554Z"
+    },
+    {
+      "id": "00aedaed-8bd6-4732-bdb6-e9f6e70d69c6",
+      "user_id": "4e019e9d-618b-4745-88e7-921dc3ce3918",
+      "email": "test@test.com",
+      "phone": null,
+      "action": "login",
+      "status": "failed_wrong_password",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+      "timestamp": "2026-03-18T05:05:53.481Z"
+    },
+    {
+      "id": "5aa091c6-9fa1-47fc-8786-65ec89b5fc76",
+      "user_id": "4e019e9d-618b-4745-88e7-921dc3ce3918",
+      "email": "test@test.com",
+      "phone": null,
+      "action": "login",
+      "status": "failed_wrong_password",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+      "timestamp": "2026-03-18T05:07:22.701Z"
+    },
+    {
+      "id": "8b25edc2-5183-48bc-8642-2a57bea3b16c",
+      "user_id": "e11ab97d-8849-4e42-8382-60735c869c03",
+      "email": "verify@test.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+      "timestamp": "2026-03-18T05:08:39.383Z"
+    },
+    {
+      "id": "1c0ba407-f00f-40de-a1a6-52a064cfb88b",
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "email": "nehalkusumbe244@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+      "timestamp": "2026-03-18T05:12:41.093Z"
+    },
+    {
+      "id": "520aa44b-5d06-42fe-8370-9b80cf011c58",
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "email": "nehalkusumbe244@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+      "timestamp": "2026-03-18T05:27:42.437Z"
+    },
+    {
+      "id": "cd1daa09-2523-435a-9440-b116f240c1e3",
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "email": "nehalkusumbe244@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+      "timestamp": "2026-03-18T05:31:05.199Z"
+    },
+    {
+      "id": "a8fb8648-b17b-4416-8f96-550cdb53e207",
+      "user_id": null,
+      "email": "chinu@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "failed_not_found",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+      "timestamp": "2026-03-18T05:37:31.376Z"
+    },
+    {
+      "id": "91b5c7c2-a9f0-43bf-8eef-ee8191ae911b",
+      "user_id": "abb91d50-ae0d-4c8b-a808-ae6cc795c27e",
+      "email": "chinu@gmail.com",
+      "phone": null,
+      "action": "signup",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+      "timestamp": "2026-03-18T05:37:55.862Z"
+    },
+    {
+      "id": "a3719da3-8902-4130-82ca-72719dba923d",
+      "user_id": "abb91d50-ae0d-4c8b-a808-ae6cc795c27e",
+      "email": "chandakusumbe56@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+      "timestamp": "2026-03-18T05:38:12.667Z"
+    },
+    {
+      "id": "448645d3-7e9c-4335-82f0-02151f68f137",
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "email": "nehalkusumbe244@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+      "timestamp": "2026-03-18T05:57:20.262Z"
+    },
+    {
+      "id": "57e291d2-9e9f-47e8-b116-10f977c8bfe2",
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "email": "nehalkusumbe244@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+      "timestamp": "2026-03-18T05:58:42.098Z"
+    },
+    {
+      "id": "5ab88309-e034-4b35-8188-563f258fa48b",
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "email": "nehalkusumbe244@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+      "timestamp": "2026-03-18T06:00:17.639Z"
+    },
+    {
+      "id": "1f1c52e0-a111-43c9-9275-9faa48d3e0cd",
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "email": "nehalkusumbe244@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+      "timestamp": "2026-03-18T06:02:30.157Z"
+    },
+    {
+      "id": "2802e844-67ae-4a11-942e-a1333bc9641c",
+      "user_id": null,
+      "email": "neha00@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "failed_not_found",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+      "timestamp": "2026-03-18T06:09:19.145Z"
+    },
+    {
+      "id": "bc3fa5ab-070d-4eb0-9c3a-bd9b0063343c",
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "email": "nehalkusumbe244@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36",
+      "timestamp": "2026-03-18T06:10:02.364Z"
+    },
+    {
+      "id": "c05102aa-f972-4529-b92c-cc2ca2a0bb01",
+      "user_id": "eaf4b41a-1d87-491e-a6da-a3a298eb2003",
+      "email": "tester123@example.com",
+      "phone": null,
+      "action": "signup",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "timestamp": "2026-03-19T06:06:42.958Z"
+    },
+    {
+      "id": "b32a4088-97df-4694-a211-8e6d37f50e4d",
+      "user_id": "eaf4b41a-1d87-491e-a6da-a3a298eb2003",
+      "email": "tester123@example.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36",
+      "timestamp": "2026-03-19T06:08:09.778Z"
+    },
+    {
+      "id": "97572aa5-55ef-41a1-86f6-8877af13286d",
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "email": "nehalkusumbe244@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+      "timestamp": "2026-03-19T06:12:54.210Z"
+    },
+    {
+      "id": "983443f2-c2d4-4d10-b492-77f5da66e603",
+      "user_id": "a5a2d247-f9bc-48c6-bca3-dd4aa561f427",
+      "email": "nehalkusumbe244@gmail.com",
+      "phone": null,
+      "action": "login",
+      "status": "success",
+      "ip_address": "127.0.0.1",
+      "user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36 Edg/146.0.0.0",
+      "timestamp": "2026-03-19T06:22:15.745Z"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+﻿node : file:///C:/Users
+/nehal/OneDrive/java/De
+sktop/app-9nyarvfv57gh/
+server/routes/api.js:61
+At line:1 char:1
++ node server.js > 
+out_full.txt 2>&1
++ ~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~
+    + CategoryInfo     
+         : NotSpecifi  
+  ed: (file:///C:/Us   
+ er...outes/api.js:    
+61:String) [], Rem    
+oteException
+    + FullyQualifiedEr 
+   rorId : NativeComm  
+  andError
+ 
+      query += \` 
+LIMIT ?\`;
+               ^
+
+SyntaxError: Invalid 
+or unexpected token
+    at compileSourceTex
+tModule (node:internal/
+modules/esm/utils:318:1
+6)
+    at ModuleLoader.mod
+uleStrategy (node:inter
+nal/modules/esm/transla
+tors:111:18)
+    at #translate (node
+:internal/modules/esm/l
+oader:473:20)
+    at afterLoad (node:
+internal/modules/esm/lo
+ader:529:29)
+    at ModuleLoader.loa
+dAndTranslate (node:int
+ernal/modules/esm/loade
+r:534:12)
+    at #getOrCreateModu
+leJobAfterResolve (node
+:internal/modules/esm/l
+oader:577:36)
+    at afterResolve (no
+de:internal/modules/esm
+/loader:625:52)
+    at ModuleLoader.get
+OrCreateModuleJob (node
+:internal/modules/esm/l
+oader:631:12)
+    at 
+ModuleJob.syncLink (nod
+e:internal/modules/esm/
+module_job:160:33)
+    at ModuleJob.link (
+node:internal/modules/e
+sm/module_job:245:17)
+
+Node.js v24.13.1

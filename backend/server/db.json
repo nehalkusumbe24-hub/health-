@@ -36,10 +36,16 @@
       "full_name": "Test User"
     },
     {
-      "id": "58abbecd-4ae0-4b23-81f1-bb6a16ff5bed",
-      "email": "deploytest2@example.com",
+      "id": "e1e73345-36a9-40aa-b1cb-163c63e3f61f",
+      "email": "testlogin3@example.com",
       "role": "user",
-      "full_name": "Deploy Test"
+      "full_name": "Test Login"
+    },
+    {
+      "id": "4fdbe24d-98af-4243-a406-98a0ec1d8c6e",
+      "email": "nehalkusumbe224@gmail.com",
+      "role": "user",
+      "full_name": "nehal ku"
     }
   ],
   "doctors": [],
@@ -73,8 +79,12 @@
       "user_id": "132750ab-e843-47aa-b1d0-1b03492162d1"
     },
     {
-      "id": "7fa19f2c-6eef-490e-ad60-345b450af181",
-      "user_id": "58abbecd-4ae0-4b23-81f1-bb6a16ff5bed"
+      "id": "5b603b8f-eeb8-4206-8b8f-6698fc05c6ea",
+      "user_id": "e1e73345-36a9-40aa-b1cb-163c63e3f61f"
+    },
+    {
+      "id": "11efd147-8118-45d9-a60a-c7d12deace09",
+      "user_id": "4fdbe24d-98af-4243-a406-98a0ec1d8c6e"
     }
   ],
   "appointments": [],
@@ -130,9 +140,14 @@
       "password_hash": "$2b$10$MtUNVzoK8N6BM.U2sWk6quPrilWoDb1R9oC8GFAMmVBGEP5YhF.1K"
     },
     {
-      "id": "58abbecd-4ae0-4b23-81f1-bb6a16ff5bed",
-      "email": "deploytest2@example.com",
-      "password_hash": "$2b$10$uf6ukafnvjtLF4.pcXBzTukvDxOVdKnjVmaY0zYb6CgIz2uEK9wWe"
+      "id": "e1e73345-36a9-40aa-b1cb-163c63e3f61f",
+      "email": "testlogin3@example.com",
+      "password_hash": "$2b$10$iRVsJzB6YIhRJq16q3vxLu7e97paMZ7WGOLarFH3g/HtgjBTjK.aS"
+    },
+    {
+      "id": "4fdbe24d-98af-4243-a406-98a0ec1d8c6e",
+      "email": "nehalkusumbe224@gmail.com",
+      "password_hash": "$2b$10$VeqjT5fWtES8Unkv3wa8IuhefFcd15LwW6Qx7KgT1ipvlRJj1jpLy"
     }
   ]
 }
