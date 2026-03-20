@@ -69,13 +69,21 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   const signInWithEmail = async (email: string, password: string) => {
     try {
+      console.log(`[Auth] Attempting login to: ${API_URL}/auth/login`);
       const res = await fetch(`${API_URL}/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password })
       });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || data.message || 'Login failed');
+      
+      let data;
+      try {
+        data = await res.json();
+      } catch (e) {
+        throw new Error(`Server returned non-JSON response from ${API_URL}/auth/login. Status: ${res.status}`);
+      }
+
+      if (!res.ok) throw new Error(data.error || data.message || `Login failed with status ${res.status}`);
 
       localStorage.setItem('token', data.token);
       localStorage.setItem('user', JSON.stringify(data.user));
@@ -83,21 +91,33 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       getProfile(data.user.id).then(setProfile);
       return { error: null };
     } catch (error) {
+      console.error('[Auth] Login error:', error);
+      alert(`Login Error connecting to ${API_URL || '(relative URL)'}/auth/login: ${(error as Error).message}`);
       return { error: error as Error };
     }
   };
 
   const signUpWithEmail = async (email: string, password: string, fullName?: string) => {
     try {
+      console.log(`[Auth] Attempting signup to: ${API_URL}/auth/signup`);
       const res = await fetch(`${API_URL}/auth/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password, full_name: fullName || '' })
       });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || data.message || 'Signup failed');
+      
+      let data;
+      try {
+        data = await res.json();
+      } catch (e) {
+        throw new Error(`Server returned non-JSON response from ${API_URL}/auth/signup. Status: ${res.status}`);
+      }
+
+      if (!res.ok) throw new Error(data.error || data.message || `Signup failed with status ${res.status}`);
       return { error: null };
     } catch (error) {
+      console.error('[Auth] Signup error:', error);
+      alert(`Signup Error connecting to ${API_URL || '(relative URL)'}/auth/signup: ${(error as Error).message}`);
       return { error: error as Error };
     }
   };

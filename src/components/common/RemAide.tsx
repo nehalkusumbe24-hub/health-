@@ -90,7 +90,8 @@ export default function RemAide({ context }: RemAideProps) {
     setLoading(true);
 
     try {
-      const res = await fetch('/functions/v1/ayurvedic-chatbot', {
+      const baseUrl = import.meta.env.VITE_API_URL || '';
+      const res = await fetch(`${baseUrl}/functions/v1/ayurvedic-chatbot`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

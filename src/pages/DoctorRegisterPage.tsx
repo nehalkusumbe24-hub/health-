@@ -62,7 +62,8 @@ export default function DoctorRegisterPage() {
         const formData = new FormData();
         formData.append('file', credentialsFile);
         
-        const res = await fetch('/api/upload', {
+        const baseUrl = import.meta.env.VITE_API_URL || '';
+        const res = await fetch(`${baseUrl}/api/upload`, {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`

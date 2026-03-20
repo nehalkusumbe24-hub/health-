@@ -73,7 +73,8 @@ const useSupabaseUpload = (options: UseLocalUploadOptions) => {
         const formData = new FormData()
         formData.append('file', file)
         
-        const response = await fetch('/api/upload', {
+        const baseUrl = import.meta.env.VITE_API_URL || '';
+        const response = await fetch(`${baseUrl}/api/upload`, {
           method: 'POST',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`

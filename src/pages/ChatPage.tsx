@@ -75,7 +75,8 @@ export default function ChatPage() {
         content: msg.message,
       }));
 
-      const response = await fetch('/functions/v1/ayurvedic-chatbot', {
+      const baseUrl = import.meta.env.VITE_API_URL || '';
+      const response = await fetch(`${baseUrl}/functions/v1/ayurvedic-chatbot`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

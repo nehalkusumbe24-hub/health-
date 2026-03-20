@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
+    "start": "node backend.cjs",
     "lint": "tsgo -p tsconfig.check.json && biome lint --only=correctness/noUndeclaredDependencies && ast-grep scan"
   },
   "dependencies": {
