@@ -5,7 +5,7 @@ import crypto from 'crypto';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const DB_FILE = path.join(__dirname, 'db.json');
+const DB_FILE = path.join(__dirname, '..', 'db.json');
 
 class JsonDb {
   constructor() {
@@ -16,7 +16,13 @@ class JsonDb {
       appointments: [],
       medical_records: [],
       chat_messages: [],
-      auth_users: []
+      auth_users: [],
+      assessments: [],
+      diet_plans: [],
+      exercise_plans: [],
+      habit_tracking: [],
+      prescriptions: [],
+      login_logs: []
     };
     this.initialized = false;
   }
@@ -25,7 +31,9 @@ class JsonDb {
     if (this.initialized) return;
     try {
       const content = await fs.readFile(DB_FILE, 'utf8');
-      this.data = JSON.parse(content);
+      const loadedData = JSON.parse(content);
+      // Merge with defaults to ensure all tables exist
+      this.data = { ...this.data, ...loadedData };
     } catch (e) {
       await this.save();
     }

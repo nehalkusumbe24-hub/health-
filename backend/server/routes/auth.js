@@ -59,6 +59,22 @@ router.post('/login', async (req, res) => {
     }
 
     const token = jwt.sign({ id: user.id, email: user.email }, JWT_SECRET, { expiresIn: '7d' });
+    
+    // Log the successful login
+    try {
+      await db.run(
+        'INSERT INTO login_logs (id, user_id, email, action, status, timestamp) VALUES (?, ?, ?, ?, ?, ?)',
+        crypto.randomUUID(),
+        user.id,
+        user.email,
+        'login',
+        'success',
+        new Date().toISOString()
+      );
+    } catch (logError) {
+      console.error('Failed to log login:', logError);
+    }
+
     res.json({ token, user: { id: user.id, email: user.email } });
   } catch (error) {
     res.status(500).json({ error: error.message });

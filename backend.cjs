@@ -8,11 +8,15 @@ const jwt = require('jsonwebtoken');
 const multer = require('multer');
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 const JWT_SECRET = 'ayurveda-secret-key-2025-secure';
 const DB_FILE = path.join(__dirname, 'db.json');
 
-app.use(cors());
+app.use(cors({
+    origin: ['https://finalyear-eta.vercel.app', 'http://localhost:5173'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 
 // --- Database Logic ---
